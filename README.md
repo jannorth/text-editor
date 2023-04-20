@@ -10,22 +10,35 @@ While using this app, it should solve the problem of being able to access notes 
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Open the terminal from the root directory.
+
+In the terminal, run the command, "npm install."
+
+In the terminal, run the command, "npm run build."
+
+In the terminal, run the command, "npm run start."
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Go to local host 3000
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+![text editor step 1](assets/images/text-editor-online.png)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Download the text editor by clicking the "Install," button.
+
+![text editor step 2](assets/images/text-editor2.png)
+
+![text editor step 3](assets/images/text-editor3.png)
+
+See how the text still saves, even while working offline.
+
+![text editor step 4](assets/images/text-editor4.png)
+
+Use the text editor to keep track of your work!
 
 ## License
 
