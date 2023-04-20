@@ -14,6 +14,10 @@ While using this app, it should solve the problem of being able to access notes 
 
 ## Installation
 
+[click-here-to-try-text-editor-app!](https://stark-sands-99091.herokuapp.com/)
+
+For developers:
+
 Open the terminal from the root directory.
 
 In the terminal, run the command, "npm install."
