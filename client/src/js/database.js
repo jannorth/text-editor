@@ -12,38 +12,44 @@ const initdb = async () =>
     },
   });
 
-export const putDb = async (content) => {
-    console.log('GET from the database');
-  
-    const jateDB = await openDB('jate', 1);
-  
-    const tx = jateDB.transaction('jate', 'readwrite');
-  
+  export const putDb = async (content) => {
+    console.log('PUT to the database');
+    
+    const JATEDB = await openDB('jate', 1);
+    
+    const tx = JATEDB.transaction('jate', 'readwrite');
+    
     const store = tx.objectStore('jate');
-  
-    const request = store.put({ id: 1, value: content });
-  
-    const result = await request;
-    console.log('result.value', result);
-    console.error('putDb not implemented');
-    // return result.value;
-  };  
+    
+    const request = store.put({ id: 1, value: JSON.stringify(content) });
+    
+    try {
+      const result = await request;
+      console.log('result.value', result);
+      return result;
+    } catch (error) {
+      console.error('Error putting data into idb', error);
+    }
+  };
 
-export const getDb = async () => {
+  export const getDb = async () => {
     console.log('GET from the database');
-  
-    const jateDB = await openDB('jate', 1);
-  
-    const tx = jateDB.transaction('jate', 'readonly');
-  
+    
+    const JATEDB = await openDB('jate', 1);
+    
+    const tx = JATEDB.transaction('jate', 'readonly');
+    
     const store = tx.objectStore('jate');
-  
+    
     const request = store.getAll();
-  
-    const result = await request;
-    console.log('result.value', result);
-    console.error('getDb not implemented');
-    return result.value;
+    
+    try {
+      const result = await request;
+      console.log('result.value', result);
+      return JSON.parse(result[0].value);
+    } catch (error) {
+      console.error('Error getting data from idb', error);
+    }
   };
 
 initdb();

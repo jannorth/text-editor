@@ -39,20 +39,20 @@ registerRoute(
   })
 );
 
-workbox.routing.setDefaultHandler(
-  offlineFallback({
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-    ],
-    fallback: async () => {
-      const cache = await caches.open('page-cache');
-      const response = await cache.match('/offline.html');
-      if (response) {
-        return response;
-      }
-      return new Response('Offline');
-    },
-  })
-);
+// workbox.routing.setDefaultHandler(
+//   offlineFallback({
+//     plugins: [
+//       new CacheableResponsePlugin({
+//         statuses: [0, 200],
+//       }),
+//     ],
+//     fallback: async () => {
+//       const cache = await caches.open('page-cache');
+//       const response = await cache.match('/offline.html');
+//       if (response) {
+//         return response;
+//       }
+//       return new Response('Offline');
+//     },
+//   })
+// );
